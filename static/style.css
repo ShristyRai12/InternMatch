@@ -1,0 +1,284 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f3eef8;
+    color: #29243a;
+    min-height: 100vh;
+}
+
+
+/* ---------- Header ---------- */
+
+.header {
+    text-align: center;
+    padding: 55px 20px 35px;
+}
+
+.header h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 46px;
+    color: #684bb0;
+    margin-bottom: 10px;
+    letter-spacing: -1px;
+}
+
+.header p {
+    color: #77718a;
+    font-size: 17px;
+}
+
+
+/* ---------- Main ---------- */
+
+main {
+    width: 90%;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+
+/* ---------- Search Section ---------- */
+
+.search-section {
+    background: #fffdfb;
+    padding: 40px;
+    border-radius: 22px;
+    border: 1px solid #e7dff0;
+    box-shadow: 0 15px 40px rgba(70, 55, 90, 0.14);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #40384f;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #e2dce8;
+    border-radius: 10px;
+    font-size: 15px;
+    outline: none;
+    background: #faf8fc;
+    color: #332d3d;
+}
+
+input:focus,
+select:focus {
+    border-color: #9b7bd4;
+    box-shadow: 0 0 0 3px rgba(155, 123, 212, 0.12);
+}
+
+
+/* ---------- Button ---------- */
+
+button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: #8064c7;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #6c4ab6;
+    transform: translateY(-1px);
+}
+
+
+
+/* ---------- Recommendations ---------- */
+
+.recommendations {
+    margin-top: 40px;
+    padding-bottom: 40px;
+}
+
+.recommendations h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #554278;
+}
+
+.job-card {
+    background: white;
+    padding: 25px;
+    margin-top: 18px;
+    border-radius: 18px;
+    box-shadow: 0 7px 22px rgba(92, 72, 130, 0.10);
+    border: 1px solid #eee9f7;
+}
+
+.job-card h3 {
+    color: #684bb0;
+    font-size: 21px;
+    margin-bottom: 15px;
+}
+
+.job-card p {
+    margin-bottom: 9px;
+    color: #625b70;
+}
+
+.job-card strong {
+    color: #3f384b;
+}
+
+
+/* ---------- Footer ---------- */
+
+.footer {
+    text-align: center;
+    padding: 25px;
+    margin-top: 20px;
+    color: #817a91;
+    font-size: 14px;
+}
+/* for match score display */
+.match-score {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #f1ebff;
+    color: #6c4ab6;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-weight: 600;
+    margin: 10px 0 15px;
+}
+
+.score-label {
+    font-size: 14px;
+}
+
+.score-value {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.back-button {
+    text-align: center;
+    margin: 30px 0 40px;
+}
+/* for search again button */
+.back-button a {
+    display: inline-block;
+    padding: 11px 22px;
+    border: 2px solid #8064c7;
+    border-radius: 10px;
+    color: #8064c7;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.back-button a:hover {
+    background: #8064c7;
+    color: white;
+    transform: translateY(-1px);
+}
+
+.search-section::before {
+    content: "✦";
+    display: block;
+    text-align: center;
+    font-size: 20px;
+    color: #a58bd4;
+    margin-bottom: 15px;
+}
+
+/* to add skills in box */
+.skills-section {
+    margin-top: 15px;
+}
+
+.skills-section strong {
+    display: block;
+    margin-bottom: 8px;
+    color: #40384f;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skill-tag {
+    padding: 6px 11px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.skill-tag.matched {
+    background: #eee8ff;
+    color: #684bb0;
+}
+
+.skill-tag.missing {
+    background: #f8edf2;
+    color: #a45d78;
+}
+.results-subtitle {
+    text-align: center;
+    color: #777080;
+    margin-top: -10px;
+    margin-bottom: 25px;
+    font-size: 15px;
+}
+
+
+
+.brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.logo-mark {
+    width: 48px;
+    height: 48px;
+    border: 3px solid #684bb0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #684bb0;
+    font-size: 19px;
+    font-weight: 800;
+}
+/* error logic for invalid skills */
+.error {
+    color: #9b4d68;
+    background: #f8edf2;
+    border: 1px solid #efd5df;
+    padding: 12px 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>InternMatch</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <header class="header">
+       <h1 class="brand">
+    <span class="logo-mark">IM</span>
+    <span>InternMatch</span>
+</h1>
+        <p>Find internships that match your skills</p>
+    </header>
+
+    <main>
+
+        <section class="search-section">
+
+            <form method="POST">
+                {% if error %}
+    <p class="error">{{ error }}</p>
+{% endif %}
+                <div class="form-group">
+                    <label for="skills">Skills</label>
+
+                    <input
+                        type="text"
+                        id="skills"
+                        name="skills"
+                        placeholder="e.g. Python, SQL, Pandas"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="work_mode">Work Mode</label>
+
+                    <select id="work_mode" name="work_mode">
+                        <option value="any">Any</option>
+                        <option value="remote">Remote</option>
+                        <option value="hybrid">Hybrid</option>
+                        <option value="on-site">On-site</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="location">Location</label>
+
+                    <input
+                        type="text"
+                        id="location"
+                        name="location"
+                        placeholder="e.g. Bangalore or Any"
+                    >
+                </div>
+
+                <button type="submit">
+                   &#10024; Find My Internships
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- <section class="recommendations">
+
+            Internship recommendations will be displayed here
+
+        </section> -->
+        
+
+    </main>
+
+    <footer class="footer">
+        <p>InternMatch &copy; 2026</p>
+        <p>Made with &hearts; for students</p>
+    </footer>
+
+</body>
+
+</html>

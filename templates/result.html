@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>InternMatch - Recommendations</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <header class="header">
+      <h1 class="brand">
+    <span class="logo-mark">IM</span>
+    <span>InternMatch</span>
+</h1>
+  <p>Your internship matches</p>
+    </header>
+
+    <main>
+
+        <section class="recommendations">
+
+            {% if recommendations %}
+
+                <h2>Internship Recommendations</h2>
+                <h2>You got {{ recommendations|length }} matches! ✨</h2>
+
+<p class="results-subtitle">
+    Here are the internships that best match your skills and preferences.
+</p>
+
+                {% for job in recommendations %}
+
+                    <article class="job-card">
+
+                        <h3>{{ job["job_title"] }}</h3>
+
+                        <p>
+                            <strong>Company:</strong>
+                            {{ job["company_name"] }}
+                        </p>
+
+                        <p>
+                            <strong>Category:</strong>
+                            {{ job["job_category"] }}
+                        </p>
+
+                        <p>
+                            <strong>Location:</strong>
+                            {{ job["location_city"] }},
+                            {{ job["location_state"] }}
+                        </p>
+
+                        <p>
+                            <strong>Work Mode:</strong>
+                            {{ job["work_mode"] }}
+                        </p>
+
+                        <p>
+                            <strong>Stipend:</strong>
+                            {{ job["stipend_amount"] }}
+                        </p>
+
+                       <div class="match-score">
+    <span class="score-label">Match</span>
+    <span class="score-value">
+        {{ "%.0f"|format(job["match_score"]) }}%
+    </span>
+</div>
+
+                        <div class="skills-section">
+    <strong>Matched Skills</strong>
+
+    <div class="skill-tags">
+        {% for skill in job["matched_skills"] %}
+            <span class="skill-tag matched">{{ skill }}</span>
+        {% endfor %}
+    </div>
+</div>
+                        <div class="skills-section">
+    <strong>Skills to Learn</strong>
+
+    <div class="skill-tags">
+        {% for skill in job["missing_skills"] %}
+            <span class="skill-tag missing">{{ skill }}</span>
+        {% endfor %}
+    </div>
+</div>
+
+                        <p>
+                            <strong>Application Deadline:</strong>
+                            {{ job["application_deadline"] }}
+                        </p>
+
+                    </article>
+
+                {% endfor %}
+
+            {% endif %}
+
+        </section>
+
+        <div class="back-button">
+            <a href="/">← Search Again</a>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <p>InternMatch &copy; 2026</p>
+        <p>Made with &hearts; for students</p>
+    </footer>
+
+</body>
+
+</html>
