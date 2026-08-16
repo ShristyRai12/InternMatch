@@ -11,9 +11,10 @@ def get_missing_skills(user_skills, job_skills):
 def get_matched_skills(user_skills, job_skills):
     return [skill for skill in job_skills if skill in user_skills]
 
-def get_top_recommendations(df, top_n=5):
+def get_top_recommendations(df, top_n=10):
     recommendations = (
-        df.sort_values("match_score", ascending=False)
+        df[df["match_score"] > 0]
+        .sort_values("match_score", ascending=False)
         .drop_duplicates("job_title")
         .head(top_n)
         .reset_index(drop=True)
